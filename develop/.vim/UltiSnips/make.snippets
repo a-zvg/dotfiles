@@ -1,0 +1,10 @@
+snippet all:
+CXXFLAGS=-g -std=c++14 -Wall -Wextra
+
+all:$0g++ $(CXXFLAGS) a.cpp -lpthread
+endsnippet
+
+snippet : "Make rule"
+${1:target}: ${2:deps}
+	$0
+endsnippet

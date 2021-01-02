@@ -1,0 +1,113 @@
+priority -50
+
+extends c
+
+# We want to overwrite everything in parent ft.
+priority -49
+###########################################################################
+#			    Global functions 						  #
+###########################################################################
+
+global !p
+
+def write_docstring_args(arglist, snip):
+	args = str(arglist).split(',')
+
+	if len(args) > 1:
+		c = 0
+		for arg in args:
+			if c == 0:
+				snip.rv += arg
+				c = 1
+			else:
+				snip += '*       : %s' % arg.strip()
+	else:
+		snip.rv = args[0]
+
+
+endglobal
+
+###########################################################################
+#                            TextMate Snippets                            #
+###########################################################################
+snippet main
+int main( int argc, char** argv )
+{
+    $0
+    return 0;
+}
+endsnippet
+
+snippet @file
+/// @file
+/// @brief $0
+
+endsnippet
+
+snippet @fileh
+/// @file
+/// @brief $0
+
+#pragma once
+
+endsnippet
+
+snippet @todo
+/// @todo 
+endsnippet
+
+snippet #i
+#include <$0>
+endsnippet
+
+snippet for
+for ( int i = 0; i < $0; ++i )
+{
+}
+endsnippet
+
+snippet try
+try
+{
+    $0
+}
+catch ( std::exception& e )
+{
+}
+endsnippet
+
+snippet throw
+throw std::runtime_error( "$0" );
+endsnippet
+
+
+snippet cl "class .. (class)"
+class ${1:`!p snip.rv = snip.basename or "name"`}
+{
+public:
+    ${1/(\w+).*/$1/}(${2:arguments});
+    virtual ~${1/(\w+).*/$1/}();
+private:
+};
+endsnippet
+
+snippet ns "namespace .. (namespace)"
+namespace${1/.+/ /m}${1:`!p snip.rv = snip.basename or "name"`}
+{
+	${VISUAL}$0
+}${1/.+/ \/\/ /m}$1${1/.+//m}
+endsnippet
+
+snippet map "std::map (map)"
+std::map<${1:key}, ${2:value}> map$0;
+endsnippet
+
+snippet vector "std::vector (v)"
+std::vector<${1:char}> v$0;
+endsnippet
+
+snippet tp "template <typename ..> (template)"
+template <typename ${1:_InputIter}>
+endsnippet
+
+# vim:ft=snippets:

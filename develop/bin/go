@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#set -x
+
+dirs=(work)
+dir=""
+
+if [[ "$1" = "work" ]]; then
+   dir="$HOME/work"
+fi
+
+if [ ! -z "$dir" ]; then
+    cd "$dir"
+else
+    echo "Available targets:"
+    for d in "${dirs[@]}"; do
+        echo $d
+    done
+fi
