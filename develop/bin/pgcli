@@ -1,4 +1,4 @@
 #!/bin/bash
 
 export LD_LIBRARY_PATH=$HOME/postgresql/lib
-$HOME/.local/bin/pgcli $@
+$HOME/.local/bin/pgcli "$@"

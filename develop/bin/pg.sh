@@ -10,4 +10,4 @@ fi
 POSTGRESQL_LIB="$(dirname "$1")/../lib"
 export LD_LIBRARY_PATH="$POSTGRESQL_LIB"
 
-$@
+"$@"

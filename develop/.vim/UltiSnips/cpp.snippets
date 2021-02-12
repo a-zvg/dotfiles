@@ -81,33 +81,24 @@ throw std::runtime_error( "$0" );
 endsnippet
 
 
-snippet cl "class .. (class)"
+snippet class "class .. (class)"
 class ${1:`!p snip.rv = snip.basename or "name"`}
 {
 public:
-    ${1/(\w+).*/$1/}(${2:arguments});
+    ${1/(\w+).*/$1/}();
     virtual ~${1/(\w+).*/$1/}();
 private:
 };
 endsnippet
 
-snippet ns "namespace .. (namespace)"
+snippet namespace
 namespace${1/.+/ /m}${1:`!p snip.rv = snip.basename or "name"`}
 {
-	${VISUAL}$0
-}${1/.+/ \/\/ /m}$1${1/.+//m}
+}${1/.+/ \/\/namespace /m}$1${1/.+//m}
 endsnippet
 
-snippet map "std::map (map)"
-std::map<${1:key}, ${2:value}> map$0;
-endsnippet
-
-snippet vector "std::vector (v)"
-std::vector<${1:char}> v$0;
-endsnippet
-
-snippet tp "template <typename ..> (template)"
-template <typename ${1:_InputIter}>
+snippet template
+template <typename $0>
 endsnippet
 
 # vim:ft=snippets:
