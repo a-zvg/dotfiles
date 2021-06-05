@@ -1,8 +1,11 @@
 alias ..='cd ..'
 alias -- -='cd -'
 alias l='ls -Ap --color=auto --group-directories-first -w100'
+alias l1='l -1'
 alias go='. go'
+alias v='vim'
 alias gv='gtags && vim'
 alias y='xclip -selection clipboard'
 alias p='xclip -selection clipboard -o'
 alias sl="( find -regex '.*\.\(h\|hpp\|c\|cpp\)$' -print0 | xargs -0 cat ) | wc -l"
+alias h='history | fzf --tac'

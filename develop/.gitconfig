@@ -21,3 +21,6 @@
 	interactive = auto
 	ui = true
 	pager = true
+
+[core]
+	quotepath = off

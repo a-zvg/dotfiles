@@ -82,6 +82,8 @@ nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 nnoremap [ :cp<CR>
 nnoremap ] :cn<CR>
 
+nnoremap <Leader><CR> :make 
+
 " НАСТРОЙКИ НИЖЕ ТОЛЬКО ДЛЯ ПЛАГИНОВ
 " подключение плагинов
 execute pathogen#infect()
@@ -101,6 +103,8 @@ nnoremap <C-\><C-_> :Ack! -w<Space>
 " поиск всех вхождений слова под курсором с подсветкой
 nnoremap <C-\><C-\> :let @/='\<<C-R><C-W>\>'<CR>:Ack! -w <C-R><C-W><CR>:set hlsearch<CR>
 
+nnoremap <C-B> :Buffers<CR>
+
 " Работа с git
 nnoremap <C-\><C-s> :Gstatus<CR>
 nnoremap <C-\><C-d> :Gdiff<CR>
@@ -110,6 +114,7 @@ nnoremap <C-p> :FZF<CR>
 
 nnoremap <F9> :NERDTreeToggle<CR>
 nmap <F10> <Plug>window:quickfix:loop
+nmap <F11> :TagbarToggle<CR>
 " отключить подсветку синтаксиса YCM
 nnoremap <F12> :let g:ycm_show_diagnostics_ui=0<CR>:YcmRestartServer<CR>
 
@@ -158,5 +163,5 @@ let g:lightline = {
   \ }
 
 " Настройки плагина vim-visual-multi
-let g:VM_quit_after_leaving_insert_mode = 1
+"let g:VM_quit_after_leaving_insert_mode = 1
 let g:VM_silent_exit = 1
