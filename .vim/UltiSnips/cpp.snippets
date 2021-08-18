@@ -1,0 +1,143 @@
+priority -50
+
+extends c
+
+# We want to overwrite everything in parent ft.
+priority -49
+###########################################################################
+#			    Global functions 						  #
+###########################################################################
+
+global !p
+
+def write_docstring_args(arglist, snip):
+	args = str(arglist).split(',')
+
+	if len(args) > 1:
+		c = 0
+		for arg in args:
+			if c == 0:
+				snip.rv += arg
+				c = 1
+			else:
+				snip += '*       : %s' % arg.strip()
+	else:
+		snip.rv = args[0]
+
+
+endglobal
+
+###########################################################################
+#                            TextMate Snippets                            #
+###########################################################################
+snippet main
+int main( int argc, char** argv )
+{
+    $0
+    return 0;
+}
+endsnippet
+
+snippet @fileh
+/// @file
+/// @brief Файл содержит объявление класса ${1:`!p snip.rv = snip.basename or "name"`}
+
+#pragma once
+
+
+namespace ${1/(\w+).*/$1/}
+{
+
+class ${1/(\w+).*/$1/}
+{
+public:
+    ${1/(\w+).*/$1/}() = default;
+    virtual ~${1/(\w+).*/$1/}() = default;
+
+private:
+};
+
+} //namespace ${1/(\w+).*/$1/}
+
+endsnippet
+
+snippet @file
+/// @file
+/// @brief Файл содержит реализацию класса ${1:`!p snip.rv = snip.basename or "name"`}
+
+#include <>
+
+
+namespace 
+{
+
+} //namespace 
+
+endsnippet
+
+snippet @todo
+/// @todo 
+endsnippet
+
+snippet #i
+#include <$0>
+endsnippet
+
+snippet for
+for ( int i = 0; i < $0; ++i )
+{
+}
+endsnippet
+
+snippet try
+try
+{
+    $0
+}
+catch ( std::exception& e )
+{
+}
+endsnippet
+
+snippet throw
+throw std::runtime_error( "$0" );
+endsnippet
+
+
+snippet class "class .. (class)"
+class ${1:`!p snip.rv = snip.basename or "name"`}
+{
+public:
+    ${1/(\w+).*/$1/}();
+    virtual ~${1/(\w+).*/$1/}() = default;
+private:
+};
+endsnippet
+
+snippet namespace
+namespace${1/.+/ /m}${1:`!p snip.rv = snip.basename or "name"`}
+{
+}${1/.+/ \/\/namespace /m}$1${1/.+//m}
+endsnippet
+
+snippet template
+template <typename $0>
+endsnippet
+
+snippet up
+std::unique_ptr< $0 >()
+endsnippet
+
+snippet sp
+std::shared_ptr< $0 >()
+endsnippet
+
+snippet mu
+std::make_unique< $0 >()
+endsnippet
+
+snippet ms
+std::make_shared< $0 >()
+endsnippet
+
+# vim:ft=snippets:
