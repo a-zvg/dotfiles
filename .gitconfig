@@ -1,6 +1,9 @@
 [user]
-	name = Aleksey Zvyagin
-	email = a.zvg@ya.ru
+	name = Zvyagin.Aleksey
+	email = Aleksey.Zvyagin@infotecs.ru
+
+[http]
+	proxy = http://192.168.177.1:3128
 
 [merge]
 	tool = vimdiff

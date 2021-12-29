@@ -33,14 +33,16 @@ endglobal
 snippet main
 int main( int argc, char** argv )
 {
-    $0
-    return 0;
+     $0
+     return 0;
 }
 endsnippet
 
 snippet @fileh
 /// @file
 /// @brief Файл содержит объявление класса ${1:`!p snip.rv = snip.basename or "name"`}
+///
+/// @copyright Copyright (c) 2022 Infotecs. All Rights Reserved.
 
 #pragma once
 
@@ -51,8 +53,8 @@ namespace ${1/(\w+).*/$1/}
 class ${1/(\w+).*/$1/}
 {
 public:
-    ${1/(\w+).*/$1/}() = default;
-    virtual ~${1/(\w+).*/$1/}() = default;
+     ${1/(\w+).*/$1/}() = default;
+     virtual ~${1/(\w+).*/$1/}() = default;
 
 private:
 };
@@ -64,6 +66,8 @@ endsnippet
 snippet @file
 /// @file
 /// @brief Файл содержит реализацию класса ${1:`!p snip.rv = snip.basename or "name"`}
+///
+/// @copyright Copyright (c) 2022 Infotecs. All Rights Reserved.
 
 #include <>
 
@@ -92,7 +96,7 @@ endsnippet
 snippet try
 try
 {
-    $0
+     $0
 }
 catch ( std::exception& e )
 {
@@ -108,8 +112,8 @@ snippet class "class .. (class)"
 class ${1:`!p snip.rv = snip.basename or "name"`}
 {
 public:
-    ${1/(\w+).*/$1/}();
-    virtual ~${1/(\w+).*/$1/}() = default;
+     ${1/(\w+).*/$1/}();
+     virtual ~${1/(\w+).*/$1/}() = default;
 private:
 };
 endsnippet

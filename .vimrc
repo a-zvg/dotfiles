@@ -75,8 +75,8 @@ set noignorecase	" Do case sensitive matching
 set incsearch		" Incremental search
 set hlsearch            " Подсветка найденного текста
 " Отступ
-set softtabstop=4	" Отступ при нажатии tab
-set shiftwidth=4	" Отступы при нажатии << и >>
+set softtabstop=5	" Отступ при нажатии tab
+set shiftwidth=5	" Отступы при нажатии << и >>
 set smarttab		" Отступ при нажатии tab в начале строки
 set expandtab		" Замена символа табуляции на пробелы
 set autoindent		" Автоотступ при добавлении новой строки
