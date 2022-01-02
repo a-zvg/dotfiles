@@ -1,0 +1,2 @@
+# UNCONFIGURED FSTAB FOR BASE SYSTEM
+UUID=1cabf651-ac8f-42cd-97d1-1394c3cd4a30 /home           ext4    discard,relatime,errors=remount-ro,data=ordered 0       2
