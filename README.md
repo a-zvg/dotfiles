@@ -47,7 +47,10 @@ build_type=Release
 - Установить Debian: `wsl --install -d Debian`
 - Создать home.vhdx образ на 100ГБ с помощью Управления дисками
 - Подключить `wsl --mount --vhd D:\VHDs\home.vhdx --bare`
-- Разметить через fdisk и настроить /etc/fstab
+- Разметить через fdisk, отформатировать и настроить /etc/fstab
+  ```
+  sudo mkfs.ext4 -m 0 -E discard,lazy_itable_init=0,lazy_journal_init=0 /dev/sdc1
+  ```
 
 Если понадобится доступ по ssh:
   - Установить openssh-server: `sudo apt-get install openssh-server --no-install-recommends`
