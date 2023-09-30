@@ -12,10 +12,8 @@
 - Установить AutoHotkey и создать скрипт смены раскладки `switch_keyboards.ahk` в `shell:startup`
 - Разделить диск на Windows и Data. Изменить расположение Загрузок на диск D
 
-- Установить Visual Studio с `cmake` и `git`
-- Установить `Python`
-- Установить `conan` и `notebook`
-- Поместить директорию с скриптами Python в путь поиска PATH: `%USERPROFILE%\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\Scripts`
+- Установить `Python` (только Documentation и pip +PATH)
+- Установить `notebook`?
 - Установить профиль по умолчанию в `%USERPROFILE%\.conan\profiles\default`:
 
 ```
