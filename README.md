@@ -53,10 +53,20 @@ build_type=Release
   ```
 
 Если понадобится доступ по ssh:
-  - Установить openssh-server: `sudo apt-get install openssh-server --no-install-recommends`
-  - Выставить в /etc/ssh/sshd_config: `PasswordAuthentication yes`
-  - Запустить ssh-сервер: `sudo service ssh start`
+- Установить openssh-server: `sudo apt-get install openssh-server --no-install-recommends`
+- Выставить в /etc/ssh/sshd_config: `PasswordAuthentication yes`
+- Запустить ssh-сервер: `sudo service ssh start`
 - Добавить прокси-сервер портов с порта 2222 на порт 22 виртуальной машины WSL:
 ```
 netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=2222 connectaddress=127.0.0.1 connectport=22
+```
+
+Перенос дистрибутива на другой диск:
+- Экспорт: `wsl --export Debian d:\debian.tar`
+- Удаление: `wsl --unregister Debian`
+- Импорт на диск D: `wsl --import Debian D:\VHDs\ D:\debian.tar`
+- Возвращение пользователя по-умолчанию:
+```
+cd $env:USERPROFILE\AppData\Local\Microsoft\WindowsApps
+.\debian.exe config --default-user a
 ```
